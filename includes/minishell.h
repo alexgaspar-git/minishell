@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   minishell.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: algaspar <algaspar@student.42.fr>          +#+  +:+       +#+        */
+/*   By: gbierny <gbierny@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/30 19:21:14 by algaspar          #+#    #+#             */
-/*   Updated: 2022/09/01 22:38:42 by algaspar         ###   ########.fr       */
+/*   Updated: 2022/09/02 00:08:24 by gbierny          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,11 +19,19 @@
 # include <readline/readline.h>
 # include <readline/history.h>
 
+typedef struct s_f_parsing
+{
+	char *s_character;
+	int switch_button;
+}			t_f_parsing;
+
 typedef struct s_shell
 {
 	char	**env;
 	int		shlvl;
+	int n_element;
 	char	**parsed_line;
+	t_f_parsing *parsing;
 }	t_shell;
 
 
