@@ -1,5 +1,6 @@
 SRCS		=	main.c \
-				utils.c
+				utils.c \
+				lst.c
 
 SRCS		:= $(addprefix src/,$(SRCS))
 
