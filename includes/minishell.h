@@ -6,7 +6,7 @@
 /*   By: algaspar <algaspar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/30 19:21:14 by algaspar          #+#    #+#             */
-/*   Updated: 2022/09/02 17:33:06 by algaspar         ###   ########.fr       */
+/*   Updated: 2022/09/02 17:33:50 by algaspar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,8 +26,8 @@ enum {
 	DCHR,
 	CHR,
 	CHL,
-	SQUOTE,
-	DQUOTE,
+	SQ,
+	DQ,
 };
 
 typedef struct s_shell
