@@ -6,7 +6,7 @@
 /*   By: algaspar <algaspar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/30 21:13:43 by algaspar          #+#    #+#             */
-/*   Updated: 2022/09/01 22:37:48 by algaspar         ###   ########.fr       */
+/*   Updated: 2022/09/02 17:31:37 by algaspar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,11 +40,6 @@ void	init_shell(t_shell **shell, char **envp)
 
 }
 
-void	parsing(t_shell **shell, char *line)
-{
-	
-}
-
 int	main(int argc, char **argv, char **envp)
 {
 	t_shell	*shell;
@@ -58,8 +53,7 @@ int	main(int argc, char **argv, char **envp)
 	{
 		line = readline("mini$hell~");
 		add_history(line);
-		parsing(&shell, line);
-		execution(shell);
+		// parsing(&shell, line);
 		free(line);
 	}
 	return (0);

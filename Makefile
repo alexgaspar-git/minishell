@@ -1,5 +1,6 @@
 SRCS		=	main.c \
-				utils.c
+				utils.c \
+				lst.c
 
 SRCS		:= $(addprefix src/,$(SRCS))
 
@@ -9,14 +10,15 @@ NAME		= minishell
 
 CC			= gcc
 
-MAKE		= make
-
 RM			= rm -rf
 
 CFLAGS		= -Wall -Werror -Wextra -Iincludes
 
+LIBFT		= ./libft/libft.a
+
 $(NAME):	$(OBJS)
-			$(CC) ${CFLAGS} -o $(NAME) $(OBJS) -lreadline
+			@$(MAKE) -C ./libft
+			$(CC) $(LIBFT) ${CFLAGS} -o $(NAME) $(OBJS) -lreadline
 
 all:		$(NAME)
 
