@@ -96,6 +96,46 @@ char	*ft_strndup(const char *s, int i, int j)
 	return (dst);
 }
 
+
+void	ft_strlcat(char *dest, char *src, int n);
+{
+	int i;
+	int j;
+
+	i = 0;
+	j = 0;
+	if (!src || !n)
+	return ;
+	while (dest[i])
+		i++;
+	while (src[j] && j < n)
+	{
+		dest[i++] = src[j++];
+	}
+	dest[i] = 0;
+	return ;
+}
+
+void	ft_strcat(char *dest, char *src);
+{
+	int i;
+	int j;
+
+	i = 0;
+	j = 0;
+	if (!src)
+	return ;
+	while (dest[i])
+		i++;
+	while (src[j])
+	{
+		dest[i++] = src[j++];
+	}
+	dest[i] = 0;
+	return ;
+}
+
+
 void change_read_line(t_shell *sl, char *s, int i, int j)
 {
 	int k;
@@ -107,10 +147,11 @@ void change_read_line(t_shell *sl, char *s, int i, int j)
 		i++;
 	while (s[++i])
 		k++;
-	new_read_line = malloc(sizeof(char) * (i + k + ft_strlen(s + j) + 1))
+	new_read_line = malloc(sizeof(char) * (i + k + ft_strlen(s + j) + 1));
 	if (!new_read_line)
 		error_message("error: erreur de malloc");
-	
+	ft_strlcat(new_read_line, sl->parsing->rl_ret, i - 1);
+	ft_strcat(new_read_line, )
 }
 
 replace_with_env(t_shell *sl, char *s, int *i)
